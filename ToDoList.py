@@ -10,16 +10,16 @@ def listTasks():
         print ("There are no tasks currently.")
     else:
         print("\nCurrent Tasks:")
-        for index, task in enumerate(tasks):
+        for index, task in enumerate(tasks, 1):
             print(f"Task #{index}. {task}")
 def deleteTask():
     try:
-        tasktToDelete = int(input("# of task to delete: "))
-        if tasktToDelete >= 0 and tasktToDelete < len(tasks):
-            tasks.pop(tasktToDelete)
-            print(f"Task #{tasktToDelete} has been removed")
+        taskToDelete = int(input("# of task to delete: "))-1
+        if 0 <= taskToDelete < len(tasks):
+            tasks.pop(taskToDelete)
+            print(f"Task #{taskToDelete} has been removed")
         else:
-            print(f"Task #{tasktToDelete} was not found.")
+            print(f"Task #{taskToDelete} was not found.")
     except:
         print("Invalid input")
 
