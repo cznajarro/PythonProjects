@@ -7,7 +7,7 @@ def addTask():
 
 def listTasks():
     if not tasks:
-        print ("There are no tasks currently.")
+        print ("\nThere are no tasks currently.")
     else:
         print("\nCurrent Tasks:")
         for index, task in enumerate(tasks, 1):
@@ -21,7 +21,7 @@ def deleteTask():
         else:
             print(f"Task #{taskToDelete} was not found.")
     except:
-        print("Invalid input")
+        print("\nInvalid input, try again")
 
 if __name__ == "__main__":
     #app loop
@@ -35,7 +35,7 @@ if __name__ == "__main__":
         print("3. List tasks")
         print("4. Quit")
 
-        choice = input("Enter your choice: ")
+        choice = input("\nEnter your choice: ")
         choice = int(choice)
         
         match choice:
@@ -48,4 +48,4 @@ if __name__ == "__main__":
             case 4:
                 break
             case _:
-                print("Invalid input, try again")
+                print("\nInvalid input, try again")
