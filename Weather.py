@@ -1,9 +1,12 @@
-from flask import Flask
+import os
 import requests
+from flask import Flask
+from dotenv import load_dotenv
+load_dotenv() #loading the .env file to get the API key
 
 app = Flask(__name__)
 
-api_key = 'f4162f1bcf5a36a7ab1dd7e225196f88'
+api_key = os.environ.get("api_key")
 
 user_input = input("Enter city: ")
 
@@ -23,4 +26,4 @@ else:
 
     weather_statement = f"The weather in {user_input} is {weather}. \nThe temperature in {user_input} is {temp} degrees Fahrenheit."
 
-app.run(host="0.0.0.0", port=80)
+app.run(host="0.0.0.0", port=5001)
